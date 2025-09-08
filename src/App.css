@@ -1,36 +1,54 @@
-/* Estilos generales de la app */
+/* Centrar el contenido principal */
 main {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 900px;          /* ancho máximo */
+  margin: 0 auto;            /* centra horizontalmente */
   padding: 2rem;
-  display: flex;
+  display: flex;             /* usamos flexbox */
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;       /* centra hijos horizontalmente */
+  text-align: center;        /* centra el texto */
+  gap: 1rem;                 /* separación entre elementos */
 }
 
-/* Encabezado principal */
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin: 0;
-  color: #646cff;
+/* Ajustes de imagen dentro del main */
+main img {
+  border-radius: 8px;
+  display: block;
 }
 
-/* Para que las secciones se distingan */
-section {
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  background: #fafafa;
+/* logo (si no lo usas, puedes borrar estas reglas) */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* Oscuro si el sistema está en dark mode */
-@media (prefers-color-scheme: dark) {
-  section {
-    background: #1a1a1a;
-    border-color: #333;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  h1 {
-    color: #747bff;
+  to {
+    transform: rotate(360deg);
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
